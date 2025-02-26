@@ -1,0 +1,109 @@
+{
+  "rateLimits": [
+    {
+      "route": "/",
+      "method": "",
+      "allowedRequests": 2,
+      "perSeconds": 1,
+      "payload": []
+    },
+    {
+      "route": "/assets/v1",
+      "method": "",
+      "allowedRequests": 0,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/collections/{collection}/attributes/static/v1",
+      "method": "",
+      "allowedRequests": 2,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/collections/refresh/v\\d+",
+      "method": "",
+      "allowedRequests": 200,
+      "perSeconds": 86400,
+      "payload": []
+    },
+    {
+      "route": "/collections/sources/v1",
+      "method": "",
+      "allowedRequests": 10,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/execute/bid/v\\d+",
+      "method": "",
+      "allowedRequests": 60,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/execute/status/v\\d+",
+      "method": "",
+      "allowedRequests": 0,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/order/v\\d+",
+      "method": "",
+      "allowedRequests": 60,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/redirect/collections/{collection}/image/v1",
+      "method": "",
+      "allowedRequests": 0,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/redirect/sources/{source}/logo/v2",
+      "method": "",
+      "allowedRequests": 0,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/redirect/sources/{source}/tokens/{token}/link/v2",
+      "method": "",
+      "allowedRequests": 0,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/redirect/tokens/{token}/image/v1",
+      "method": "",
+      "allowedRequests": 0,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/redirect/token/v1",
+      "method": "",
+      "allowedRequests": 0,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/transactions/{txHash}/synced/v\\d+",
+      "method": "",
+      "allowedRequests": 0,
+      "perSeconds": 60,
+      "payload": []
+    },
+    {
+      "route": "/users/{user}/collections/v2",
+      "method": "",
+      "allowedRequests": 60,
+      "perSeconds": 60,
+      "payload": []
+    }
+  ]
+}

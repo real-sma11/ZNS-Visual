@@ -1,0 +1,52 @@
+Base Distribution Configuration
+When a top-level domain is registered through ZNSRootRegistrar, optional distribution configs --dictating the rules for creation of its subdomains -- can be specified. These are kept on the subdomain specific registrar ZNSSubRegistrar responsible for creating and managing subdomains. 
+
+The registration process for subdomains also allows an optional distribution to be specified with the  parameters outlined below. If no configuration is provided, the configuration will be empty and any attempts to mint further subdomains will fail. Domain owners or approved operators (see Operators) are an exception to this; owners and operators do not require payment of any kind beyond transaction gas costs, thus the configuration of the parent domain doesn't matter.
+
+Please note that all domain registrations include a 'protocol fee' set by ZERO that applies only when the price and 'stake fee' (if applicable) are greater than zero (0).
+
+When registering a domain via ZERO's stake-to-mint paradigm, the protocol fee will be symmetrical, meaning it will be charged both during domain registration and domain revocation (if applicable). 
+
+The configuration is as follows:
+
+Property
+
+Definition
+
+Options
+
+IZNSPricerContract
+
+The address of the contract that defines the pricing system for subdomains
+
+ZNSFixedPricer  (address) or ZNSCurvePricer  (address)
+
+PaymentType
+
+Set the form of payment for subdomain creation.
+
+DIRECT (0) or STAKE (1)
+
+AccessType
+
+Specify what users are able to mint subdomains.
+
+LOCKED (0), OPEN (1), or MINTLIST (2)
+
+Pricer contracts define a model for domains prices to be calculated. Two price contracts are provided by ZNS as ZNSFixedPricer and ZNSCurvePricer, but external, custom contracts maybe be developed by and added for any community as the system is modular.
+
+The ZNS fixed price contract (ZNSFixedPricer) defines a simple model where a domain owner specifies a specific, set price for child subdomain registrations, as well as an optional to be implemented if the parent domains chooses stake payments for subdomain registrations. The price of every subdomain for this parent domain will be the same. The ZNS curved price contract (ZNSCurvePricer) is more complex and specifies several variables used in calculating the price of a child subdomain based on its character length. More details on this can be found here in Pricing.
+
+NOTE: Solidity does not allow optional parameters and so “optional” ones listed must be provided as zero (0) values.
+
+The Options referenced above are defined as follows:
+
+DIRECT: Payment is a one-time, irreversible transfer of funds from the user registering the child domain to the parent domain owner or beneficiary.
+
+STAKE: A staking contract is funded with the stake amount until such a time as the subdomain is revoked by its owner; if or when that occurs, the stake amount will be refunded to the subdomain owner, but the subdomain will be destroyed. An optional stake fee can be set by the parent domain owner on top of the stake amount. If the subdomain is revoked in the future, neither the stake fee nor the ZERO's protocol fee will be returned. Only the protocol fee is symmetrical -- not the stake fee -- and thus only the protocol fee will be charged on revocation.
+
+LOCKED: Only a domain's owner or operator can mint subdomains.
+
+OPEN: Anyone can mint subdomains for a given parent domain.
+
+MINTLIST: Only those enumerated in a specified allowlist of users can mint subdomains for a given parent domain.

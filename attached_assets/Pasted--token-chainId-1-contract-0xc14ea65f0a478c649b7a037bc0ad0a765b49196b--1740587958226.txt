@@ -1,0 +1,56 @@
+ "token": {
+        "chainId": 1,
+        "contract": "0xc14ea65f0a478c649b7a037bc0ad0a765b49196b",
+        "tokenId": "33070211554869243620614202177476009406295727931545173484603986793781871327801",
+        "name": "0://free.bank",
+        "description": "0://free.bank, a domain on the ZERO Name Service.",
+        "image": "https://img.reservoir.tools/images/v2/mainnet/mlW7AvaWRvTlZvCoiaVc4apaWIfxAf%2Fj%2B4y3uyeadBj%2F%2B9eJ%2F2OTzdO35uUiNtqASkIpYOCYcyanNx3EBC4dpHMQa9agFryJpqQN5h%2B3rAo%3D.jpg?width=512",
+        "imageSmall": "https://img.reservoir.tools/images/v2/mainnet/mlW7AvaWRvTlZvCoiaVc4apaWIfxAf%2Fj%2B4y3uyeadBj%2F%2B9eJ%2F2OTzdO35uUiNtqASkIpYOCYcyanNx3EBC4dpHMQa9agFryJpqQN5h%2B3rAo%3D.jpg?width=250",
+        "imageLarge": "https://img.reservoir.tools/images/v2/mainnet/mlW7AvaWRvTlZvCoiaVc4apaWIfxAf%2Fj%2B4y3uyeadBj%2F%2B9eJ%2F2OTzdO35uUiNtqASkIpYOCYcyanNx3EBC4dpHMQa9agFryJpqQN5h%2B3rAo%3D.jpg?width=1000",
+        "metadata": {
+          "imageOriginal": "ar://Iovxmc0yrVTJCNNJojnhFT0GgHe0kGTX43VCyd5J9D8",
+          "imageMimeType": "image/jpeg",
+          "tokenURI": "ar://8eqDrBj81csmBUBYkNY_ofDTwHSjkfI22yNSayrd0hE"
+        },
+        "media": null,
+        "kind": "erc721",
+        "isFlagged": false,
+        "isSpam": false,
+        "isNsfw": false,
+        "metadataDisabled": false,
+        "lastFlagUpdate": null,
+        "lastFlagChange": null,
+        "supply": "1",
+        "remainingSupply": "1",
+        "rarity": 59.428,
+        "rarityRank": 2786,
+        "collection": {
+          "id": "0xc14ea65f0a478c649b7a037bc0ad0a765b49196b",
+          "name": "ZERO ID",
+          "image": "https://img.reservoir.tools/images/v2/mainnet/7%2FrdF%2Fe%2F0iXY8HduhRCoIehkmFeXPeOQQFbbmIPfjCYfdCHyFaA2OjNvWh1Bf5FYEwkS0KosUwkl%2BREEnf2NUDn6mbDWEOtuUETsaUEEQGop5FKXzSeCo8LaYxiOI5m7%2B6NqUV6DoE1jWRWipQuedw%3D%3D?width=250",
+          "slug": "zero-id-1",
+          "symbol": "ZID",
+          "creator": "0x1ea8369fa48d112e6769e7710d4e010f9972ccee",
+          "tokenCount": 3116,
+          "metadataDisabled": false,
+          "floorAskPrice": {
+            "currency": {
+              "contract": "0x0000000000000000000000000000000000000000",
+              "name": "Ether",
+              "symbol": "ETH",
+              "decimals": 18
+            },
+            "amount": {
+              "raw": "240000000000000000",
+              "decimal": 0.24,
+              "usd": 598.87571,
+              "native": 0.24
+            }
+          }
+        },
+        "owner": "0x601ec21fc84fe7e193740c4c7ee6801ae9ac0844",
+        "mintedAt": "2025-01-12T20:27:59.000Z",
+        "createdAt": "2025-01-12T20:28:02.288Z",
+        "decimals": null,
+        "mintStages": []
+ 

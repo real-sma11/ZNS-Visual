@@ -1,0 +1,63 @@
+import plotly.graph_objects as go
+import pandas as pd
+import math
+
+# Hypothetical data (replace with real data from zero.study smart contracts)
+data = [
+    {"domain": "zero.study", "subdomain": "user1.zero.study", "members": 100, "payment_amount": 50, "payment_type": "direct"},
+    {"domain": "zero.study", "subdomain": "user2.zero.study", "members": 20, "payment_amount": 30, "payment_type": "stake"},
+    {"domain": "zero.study", "subdomain": "user3.zero.study", "members": 0, "payment_amount": 10, "payment_type": "direct"},
+    {"domain": "zero.study", "subdomain": "user4.zero.study", "members": 150, "payment_amount": 70, "payment_type": "stake"},
+]
+
+# Convert to DataFrame for easier manipulation
+df = pd.DataFrame(data)
+
+# Calculate positions for nodes (radial layout)
+def calculate_position(members, index, total_angles=len(df), min_distance=100, max_distance=500):
+    distance = max(min_distance, min(max_distance, members * (max_distance - min_distance) / max(df['members']) if max(df['members']) > 0 else min_distance))
+    angle = 2 * math.pi * (index / total_angles)
+    x = distance * math.cos(angle)
+    y = distance * math.sin(angle)
+    return x, y
+
+# Calculate positions for each node
+positions = [calculate_position(row['members'], i) for i, row in df.iterrows()]
+df['x'] = [pos[0] for pos in positions]
+df['y'] = [pos[1] for pos in positions]
+
+# Create the scatter plot
+fig = go.Figure()
+
+# Add nodes (bigger size for more members)
+fig.add_trace(go.Scatter(
+    x=df['x'],
+    y=df['y'],
+    mode='markers',
+    marker=dict(
+        size=[max(10, m / 10) for m in df['members']],  # Scale size by members
+        color=['blue' if p == 'direct' else 'red' for p in df['payment_type']],  # Color by payment type
+        opacity=0.7
+    ),
+    hovertemplate=
+    '<b>Domain/Subdomain:</b> %{customdata[0]}<br>'+
+    '<b>Members:</b> %{customdata[1]}<br>'+
+    '<b>Payment Amount:</b> $%{customdata[2]}<br>'+
+    '<b>Payment Type:</b> %{customdata[3]}<extra></extra>',
+    customdata=df[['subdomain', 'members', 'payment_amount', 'payment_type']].values
+))
+
+# Update layout for a clean look
+fig.update_layout(
+    title="Zero.study Domains and Subdomains",
+    xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+    yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+    showlegend=False,
+    plot_bgcolor='black',
+    paper_bgcolor='black',
+    height=800,
+    width=800
+)
+
+# Show the plot
+fig.show()
